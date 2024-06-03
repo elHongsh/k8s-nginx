@@ -9,7 +9,7 @@ data:
       server {
         listen 80;
         location / {
-          proxy_pass http://k8s-flask:5000;
+          proxy_pass <FLASK_BACKEND_SERVICE_URL>;
           proxy_set_header Host $host;
           proxy_set_header Host X-Real-IP $remote_addr;
           proxy_set_header Host X-Forwarded-For $proxy_add_x_forwarded_for;
